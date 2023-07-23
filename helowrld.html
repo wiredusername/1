@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <video onloadstart="this.volume=1000" autoplay controls loop>
+        <source src="1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <script>
+        function getRandomColor() {
+            const min = 150;
+            const max = 255;
+            const r = Math.floor(Math.random() * (max - min + 1)) + min;
+            const g = Math.floor(Math.random() * (max - min + 1)) + min;
+            const b = Math.floor(Math.random() * (max - min + 1)) + min;
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function changeBackgroundColor() {
+            const color = getRandomColor();
+            document.body.style.backgroundColor = color;
+        }
+
+        setInterval(changeBackgroundColor, 50);
+
+    </script>
+</body>
+
+</html>
